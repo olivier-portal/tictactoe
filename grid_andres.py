@@ -10,3 +10,4 @@ def display_grid():
 
 grid = display_grid()
 print(grid)
+
