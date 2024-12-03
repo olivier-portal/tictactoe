@@ -10,10 +10,12 @@ def is_board_full(board):
             break               # Loop stops
     return dispo                # The function returns a Boolean value
 
-board = [
+
+### this 
+'''board = [
     ["X", "O", "X"],
-    ["X", "X", "O"],
-    ["O", "X", "X"]
+    ["X", " ", "O"],
+    ["O", "X", " "]
 ]
 
-print(is_board_full(board))
+print(is_board_full(board))'''
