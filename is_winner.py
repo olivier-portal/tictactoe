@@ -12,20 +12,14 @@ def is_winner(board):
 
     for combination in winner_combinations:
         if all(cell == 'X' for cell in combination):
-            print("X is the winner!")
+            print(" X est le gagnant!")
             return True
         elif all(cell == 'O' for cell in combination):
-            print("O is the winner")
+            print("O est le gagnant")
             return True
 
-    print("Anyone is the winner")
+    print("C'est un match nul !")
     return False
-
-board = [["X", "O", "X"],
-         ["O", "X", "O"],
-         ["O", "X", "X"]]
-
-is_winner(board)
 
 #######
 # This is the first version, with redundances but simple to know how find a solution
