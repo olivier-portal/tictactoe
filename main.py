@@ -1,6 +1,6 @@
 from start_game_function import intro, define_players, define_symbol, create_grid, print_board
 
-# from choose_box import choose_box
+from choose_box import choose_box
 
 from checking_case import checking_case
 
@@ -26,7 +26,8 @@ def main():
     player1, player2 = define_players()
     symbol_1, symbol_2 = define_symbol(player1, player2)
     board = create_grid()
-    printBoard = print_board(board)
+    print_the_board = print_board(board)
+    choice = choose_box(board, player1, player2, symbol_1, symbol_2)
 # start_game()
 
 # choose_box()

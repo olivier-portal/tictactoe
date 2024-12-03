@@ -1,5 +1,3 @@
-
-    
 # Introduction: Welcome players and remind rules
 def intro():
     # Welcome message
