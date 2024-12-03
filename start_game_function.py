@@ -1,6 +1,6 @@
 # Create a tic tac toe game
 
-def main():
+def start_game():
     """
     The main() function stocks the principal functions in variables in order to call them at the end
     This function also allows you to keep in buffer the variables which will be used as arguments in another function 
@@ -12,10 +12,9 @@ def main():
     """
     introduction = intro()
     player1, player2 = define_players()
-    symbol_1, symbol_2 = sym(player1, player2)
+    symbol_1, symbol_2 = define_symbol(player1, player2)
     board = create_grid()
     printBoard = print_board(board)
-    fillBoard = fill_board(board, player1, player2, symbol_1, symbol_2)
     
 # Introduction: Welcome players and remind rules
 def intro():
@@ -33,7 +32,7 @@ def define_players():
     return player1, player2 #Return and stock player1 and player2 in main() fonction variable
 
 #Attribute a symbol to each player
-def sym(player1, player2):
+def define_symbol(player1, player2):
     # ---------------------------------------------------------------------
     # player1 choose a symbol, the other symbol is automatically attributed to player2
     symbol_1 = ""
@@ -59,7 +58,7 @@ def sym(player1, player2):
 
 # Create an empty tic tac toe board
 def create_grid():
-    print("Commencez à jouer : ")
+    # print("Commencez à jouer : ")
     board = [[" ", " ", " "],
              [" ", " ", " "],
              [" ", " ", " "]]        
@@ -68,44 +67,12 @@ def create_grid():
 # call the board and print it
 def print_board(board):
 # define rows and columns
-    rows = len(board)
+    rows = len([0, 1, 2])
     cols = len(board)
+    
+    
     print(" ---+---+---")
     for r in range(rows):
          print("|", board[r][0], "|", board[r][1], "|", board[r][2], "|")
          print(" ---+---+---")
     return board
-
-# Define player's turn and fill a box with the predefined symbol
-def fill_board(board, player1, player2, symbol_1, symbol_2):
-    choice = input(f"\n{player1} à vous de jouer, choisissez une case entre 1 et 9 : ")
-    if choice == 1:
-        choice = board[0][0]      
-        print(print_board(board))
-        #     print(" ---+---+---")
-        # for r in range(rows):
-        #     for c in range(cols):
-        #         print("|", board[r][c], "|", board[r][c], "|", board[r][c], "|")
-        #         print(" ---+---+---")
-        # return board
-    # elif symbol_1 == "2":
-    #     return board[0][1] == symbol_1
-    # elif symbol_1 == "3":
-    #     return board[0][2] == symbol_1
-    # elif symbol_1 == "4":
-    #     return board[1][0] == symbol_1
-    # elif symbol_1 == "5":
-    #     return board[1][1] == symbol_1
-    # elif symbol_1 == "6":
-    #     return board[1][2] == symbol_1
-    # elif symbol_1 == "7":
-    #     return board[2][0] == symbol_1
-    # elif symbol_1 == "8":
-    #     return board[2][1] == symbol_1
-    # elif symbol_1 == "9":
-    #     return board[2][0] == symbol_1
-    
-    return board
-
-# Call main() function, it starts the game
-main()
