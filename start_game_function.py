@@ -1,20 +1,4 @@
-# Create a tic tac toe game
 
-def start_game():
-    """
-    The main() function stocks the principal functions in variables in order to call them at the end
-    This function also allows you to keep in buffer the variables which will be used as arguments in another function 
-    
-    Example: The define-player() function defines the name of the 2 players, it returns the name of player 1 in the variable player1
-             and the name of player 2 in the variable player2
-             the player1 and player2 variables are stored and used as arguments in the symbol allocation function (X or O)
-             => sym(player1, player2)
-    """
-    introduction = intro()
-    player1, player2 = define_players()
-    symbol_1, symbol_2 = define_symbol(player1, player2)
-    board = create_grid()
-    printBoard = print_board(board)
     
 # Introduction: Welcome players and remind rules
 def intro():
