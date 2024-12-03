@@ -8,8 +8,8 @@ def intro():
  
 # Define players' names       
 def define_players():
-    player1 = (input("\nQuel est le nom du premier joueur? ")) # Define player1 name
-    player2 = (input("\nQuel est le nom du deuxième joueur? ")) # Define player2 name
+    player1 = [(input("\nQuel est le nom du premier joueur? ")), ""] # Define player1 name
+    player2 = [(input("\nQuel est le nom du deuxième joueur? ")), ""] # Define player2 name
     
     return player1, player2 #Return and stock player1 and player2 in main() fonction variable
 
@@ -20,7 +20,7 @@ def define_symbol(player1, player2):
     symbol_1 = ""
     while symbol_1 not in ["O", "X"]:  # Loop until valid input is given
         
-        symbol_1 = input(f"\n{player1}, voulez-vous jouer avec les O ou les X ? ").upper()
+        symbol_1 = input(f"\n{player1[0]}, voulez-vous jouer avec les O ou les X ? ").upper()
         #player1 chooses a symbol and uppercase / lowercase are handeled
         
         if symbol_1 not in ["O", "X"]:
@@ -28,15 +28,18 @@ def define_symbol(player1, player2):
         # if char is out of range => return error message + start the loop again
 
     # player1 chooses a symbol and it assign automatically the left symbol to player2
-    if symbol_1 == "O":
-        symbol_2 = "X"
+    if player1[1] == "O":
+        player2[1] = "X"
+        
+        print(player1)
     else:
-        symbol_2 = "O"
+        player2[1] = "O"
+        player1[1] = "X"        
+    
+    print(f"\n{player1[0]}, vous jouez avec les {player1[1]} !")
+    print(f"{player2[0]}, vous jouez avec les {player2[1]} !\n")
 
-    print(f"\n{player1}, vous jouez avec les {symbol_1} !")
-    print(f"{player2}, vous jouez avec les {symbol_2} !\n")
-
-    return symbol_1, symbol_2
+    return player1[1], player2[1]
 
 # Create an empty tic tac toe board
 def create_grid():
