@@ -27,7 +27,9 @@ board = [["X", "O", "X"],
 
 is_winner(board)
 
+#######
 # This is the first version, with redundances but simple to know how find a solution
+#######
 '''def is_winner(board):
     win_checker = False
 
