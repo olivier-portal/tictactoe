@@ -1,13 +1,14 @@
 def is_board_full(board):
     i=0
-    while i < len(board):       # Un bucle que recorre el "board"
-        dispo = " " in board[i] # Evalúa si un espacio vacío " " se encuentra en la lista con índice que cambia en cada bucle,
-                                # si NO lo encuentra devuelve "False"
-                                # si lo encuentra devuelve "True"
+    while i < len(board):       # A loop through the “board”
+        dispo = " " in board[i] # Evaluates whether an empty space “ ” 
+                                # is found in the list with index that changes in each loop,
+                                # if NOT found it returns “False”.
+                                # if found, it returns “True”.
         i += 1
-        if dispo:               # Si dispo es "True"
-            break               # El bucle se detiene
-    return dispo                # La función arroja:
+        if dispo:               # Si dispo is "True"
+            break               # Loop stops
+    return dispo                # The function returns a Boolean value
 
 board = [
     ["X", "O", "X"],
