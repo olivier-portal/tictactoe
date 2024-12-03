@@ -1,12 +1,20 @@
 # Créer un jeu de ti tac toe
 
 def main():
-# Définir toutes fonctions pour les appeller toutes à la fin
+    """
+    La fonction main() intègre les fonctions principales dans des variables pour les appeller toutes à la fin
+    Cette fonction permet aussi de garder en mémoire tampon les variables qui seront utlisable en arguments dans una autre fonction 
+    
+    Exemple: La fonction define-player() définie le nom des 2 joueurs, elle retourne le nom du joueur 1 dans la variable player1
+             et le nom du joueur 2 dans la variable player2
+             les variables player1 et player2 sont stockées et utilisables en tant qu'argument dans la fonction d'attribution des symboles X ou O => sym(player1, player2)
+    """
     introduction = intro()
     player1, player2 = define_players()
-    symbol1, symbol2 = sym(player1, player2)
+    symbol_1, symbol_2 = sym(player1, player2)
     board = create_grid()
     printBoard = print_board(board)
+    fillBoard = fill_board(board, player1, player2, symbol_1, symbol_2)
     
 
 def intro():
@@ -18,31 +26,17 @@ def intro():
         
 def define_players():
     # Définie le nom des joueurs
-    print("\n")
-    print("Quel est le nom du premier joueur? ")
-    player1 = (input())
-    print("\n")
-    print("Quel est le nom du deuxième joueur? ")
-    player2 = (input())
-    return player1, player2
-    #  # ---------------------------------------------------------------------
-    # # Joueur 1 choisi 1 symbole, le joueur 2 est attribué automatiquement de l'autre
-    # symbol_1 = input(f"{player1} vous voulez jouer avec les O ou les X ? ")
-    # if symbol_1 != "O" or symbol_1 !="X":
-    #     input(f"{player1} vous devez choisir un O ou un X, recommencez : Voulez-vous jouer avec les O ou les X ? ")
-    # elif symbol_1 == "O":
-    #     symbol_2 = "X"
-    #     print(f"{player2} vous jouez avec les X ! ")
-    # else:
-    #     symbol_2 = "O"
-    #     print(f"{player1} vous jouez avec les O ! ")
+    player1 = (input("\nQuel est le nom du premier joueur? ")) # Définie le nom du premier joueur
+    player2 = (input("\nQuel est le nom du deuxième joueur? ")) # Définie le nom du deuxième joueur
+    
+    return player1, player2 #Renvoie et mémorise les noms des joueurs dans la variables du main
 
 def sym(player1, player2):
     # ---------------------------------------------------------------------
     # Joueur 1 choisi 1 symbole, le joueur 2 est attribué automatiquement de l'autre
     symbol_1 = ""
     while symbol_1 not in ["O", "X"]:  # Boucle jusqu'à ce qu'une entrée valide soit donnée
-        symbol_1 = input(f"{player1}, voulez-vous jouer avec les O ou les X ? ").upper()
+        symbol_1 = input(f"\n{player1}, voulez-vous jouer avec les O ou les X ? ").upper()
         if symbol_1 not in ["O", "X"]:
             print("Entrée invalide. Vous devez choisir entre 'O' et 'X'. Recommencez.")
 
@@ -75,5 +69,36 @@ def print_board(board):
         print("|", board[r][0], "|", board[r][1], "|", board[r][2], "|")
         print(" ---+---+---")
     return board
+
+def fill_board(board, player1, player2, symbol_1, symbol_2):
+    choice = input(f"\n{player1} à vous de jouer, choisissez une case entre 1 et 9 : ")
+    if choice == 1:
+        board[0][0] == symbol_1         
+        print(print_board(board))
+        #     print(" ---+---+---")
+        # for r in range(rows):
+        #     for c in range(cols):
+        #         print("|", board[r][c], "|", board[r][c], "|", board[r][c], "|")
+        #         print(" ---+---+---")
+        # return board
+    # elif symbol_1 == "2":
+    #     return board[0][1] == symbol_1
+    # elif symbol_1 == "3":
+    #     return board[0][2] == symbol_1
+    # elif symbol_1 == "4":
+    #     return board[1][0] == symbol_1
+    # elif symbol_1 == "5":
+    #     return board[1][1] == symbol_1
+    # elif symbol_1 == "6":
+    #     return board[1][2] == symbol_1
+    # elif symbol_1 == "7":
+    #     return board[2][0] == symbol_1
+    # elif symbol_1 == "8":
+    #     return board[2][1] == symbol_1
+    # elif symbol_1 == "9":
+    #     return board[2][0] == symbol_1
+    
+    return board
+
 
 print(main())
