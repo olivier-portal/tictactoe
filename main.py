@@ -1,19 +1,13 @@
-#Vérification de la case choisie
-def checking_case(board):
-    if board == " ":
-        return True
+# #Checking the chosen case
+def checking_case(board, choice ):
+    if choice == " ":
+             return "ok"
     else:
-        print("Case prise. Veuillez choisir une autre case")
-        return False
-# Autre option 
-def checking_case(board):
-    if board != " " or "X" or "O":
-        print("Case prise. Veuillez choisir une autre case.")
-        return False
-    return True
-# Autre option
-def checking_case(board):
-    if board == "X" or board == "O":
-        print("Case prise. Veuillez choisir une autre case.")
-        return True
-    return False
+         return "Case taken. Please choose another case."
+
+board = [["X", " ", "X"],
+        ["O", "O", "O"],
+        ["O", " ", "X"]]
+
+choice = board [2][2]
+print(checking_case(board,choice))
