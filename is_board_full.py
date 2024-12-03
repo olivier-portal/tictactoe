@@ -1,28 +1,18 @@
-###################
-
-'''dispo = " " in board[0]
-print(dispo)
-
-dispo = " " in board[1]
-print(dispo)
-
-dispo = " " in board[2]
-print(dispo)'''
 def is_board_full(board):
     i=0
-    while i < len(board):
-        dispo = " " in board[i]
-        #print(dispo)
+    while i < len(board):       # Un bucle que recorre el "board"
+        dispo = " " in board[i] # Evalúa si un espacio vacío " " se encuentra en la lista con índice que cambia en cada bucle,
+                                # si NO lo encuentra devuelve "False"
+                                # si lo encuentra devuelve "True"
         i += 1
-        if dispo:
-            print("Hay espacio disponible")
-            break
-    return dispo
+        if dispo:               # Si dispo es "True"
+            break               # El bucle se detiene
+    return dispo                # La función arroja:
 
 board = [
     ["X", "O", "X"],
     ["X", "X", "O"],
-    ["O", " ", "X"]
+    ["O", "X", "X"]
 ]
 
 print(is_board_full(board))
