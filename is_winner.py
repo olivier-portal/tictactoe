@@ -1,4 +1,4 @@
-def is_winner(board):
+def is_winner(board, player1, player2):
     winner_combinations = [
         board[0],  # first horizontal line
         board[1],  # second horizontal line
@@ -11,12 +11,11 @@ def is_winner(board):
     ]
 
     for combination in winner_combinations:
-        if all(cell == 'X' for cell in combination):
-            print(" X est le gagnant!")
+        if all(cell == player1[1] for cell in combination):
+            print(f" {player1[0]} est le gagnant!")
             return True
-        elif all(cell == 'O' for cell in combination):
-            print("O est le gagnant")
+        elif all(cell == player2[1] for cell in combination):
+            print(f"{player2[0]} est le gagnant")
             return True
 
-    print("Nadie ha ganado todavía")
     return False

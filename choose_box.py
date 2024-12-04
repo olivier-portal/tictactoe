@@ -1,11 +1,13 @@
-def choose_box(board, player1, player2, symbol_1, symbol_2):
+def choose_box(player1, player2):
     # Define who starts first:
-    count = 1
-    if count % 2 == 0:
+    round = 1
+    
+    actual_player = player1
+    if round % 2 == 0:
         actual_player = player2
     else:
         actual_player = player1
-    assigned_symbol = actual_player[1]
+
     print(f"\n{actual_player[0]} c'est votre tour de jouer ! ")
     
     # Ask player to choose a row
