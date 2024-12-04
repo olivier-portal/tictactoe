@@ -1,14 +1,19 @@
 from start_game_function import create_grid
 
-board = create_grid()
-choice = board[0][0]
+# board = create_grid()
+# choice = [0, 1, "O"]
+# board = [[' ', ' ', 'O'], [' ', ' ', ' '], [' ', ' ', ' ']]
 
 # #Checking the chosen case
 def checking_case(board, choice):
-    if choice == " ":
+    row = choice[0]
+    column = choice[1]
+    print(board)
+    if board[row - 1][column - 1] == " ":
+        print("La case est vide.")
         return True
     else:
          print("La case n'est pas vide. Veuillez choisir une autre case.")
          return False
-    
-
+     
+        
