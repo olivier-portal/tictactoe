@@ -33,24 +33,30 @@ from players_turn import players_turn
              => sym(player1, player2)
 """
 def main():
-    introduction = intro()
+    # Start the game
+    intro()
     player1, player2 = define_players()
     symbol_1, symbol_2 = define_symbol(player1, player2)
     actual_player = player1
     board = create_grid()
+    
+    # Print the initial board (empty)
     print_the_board = print_board(board)
-    while is_board_full(board) == True:
+    
+    # While the board is not full, continue to play
+    while is_board_full(board):
         choice = choose_box(actual_player, player1, player2)
         check = checking_case(board, choice)
         if check:
             fill_board(board, choice)
             if is_winner(board, player1, player2) == False:
                 if is_board_full(board) == False:
-                    print("Egalité")
+                    print_board(board)
+                    print("\nEgalité ! Bien joué à tous les deux.")
                     break
                 else:
                     print_board(board)
-                    players_turn(actual_player, player1, player2)
+                    actual_player = players_turn(actual_player, player1, player2)
             else:
                 break 
         else:
