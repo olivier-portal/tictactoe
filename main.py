@@ -39,12 +39,22 @@ def main():
     actual_player = player1
     board = create_grid()
     print_the_board = print_board(board)
-    choice = choose_box(player1, player2)
-    checking_case(board, choice)
-    fill_board(board, choice)
-    is_winner(board, player1, player2)
-    is_board_full(board)
-    print_board(board)
-    players_turn(actual_player, player1, player2) 
+    while is_board_full(board) == True:
+        choice = choose_box(actual_player, player1, player2)
+        check = checking_case(board, choice)
+        if check:
+            fill_board(board, choice)
+            if is_winner(board, player1, player2) == False:
+                if is_board_full(board) == False:
+                    print("Egalité")
+                    break
+                else:
+                    print_board(board)
+                    players_turn(actual_player, player1, player2)
+            else:
+                break 
+        else:
+            choice = choose_box(player1,player2)
+
 
 main()

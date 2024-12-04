@@ -1,12 +1,5 @@
-def choose_box(player1, player2):
+def choose_box(actual_player, player1, player2):
     # Define who starts first:
-    round = 1
-    
-    actual_player = player1
-    if round % 2 == 0:
-        actual_player = player2
-    else:
-        actual_player = player1
 
     print(f"\n{actual_player[0]} c'est votre tour de jouer ! ")
     
