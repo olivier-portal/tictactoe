@@ -31,7 +31,9 @@ def main():
     choice = choose_box(board, player1, player2, symbol_1, symbol_2)
     checking_case(board, choice)
     fill_board(board, choice)
-    
+    is_winner(board)
+    is_board_full(board)
+    print_board(board)
     
     
 main()
