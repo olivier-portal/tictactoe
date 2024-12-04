@@ -27,11 +27,11 @@ def define_symbol(player1, player2):
             print("Entrée invalide. Vous devez choisir entre 'O' et 'X'. Recommencez.")
         # if char is out of range => return error message + start the loop again
 
-    # player1 chooses a symbol and it assign automatically the left symbol to player2
-    if player1[1] == "O":
+    # player1 chooses a symbol and it assigns automatically the left symbol to player2
+    if symbol_1 == "O":
+        player1[1] = "O"
         player2[1] = "X"
         
-        print(player1)
     else:
         player2[1] = "O"
         player1[1] = "X"        
