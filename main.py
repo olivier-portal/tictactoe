@@ -1,7 +1,15 @@
 # Create a tic tac toe game
 
 # import functions
-from start_game_function import intro, define_players, define_symbol, create_grid, print_board
+from start_game import intro
+
+from define_players import define_players
+
+from define_symbol import define_symbol
+
+from create_grid import create_grid
+
+from print_board import print_board
 
 from choose_box import choose_box
 
