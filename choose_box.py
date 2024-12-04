@@ -37,5 +37,5 @@ def choose_box(board, player1, player2, symbol_1, symbol_2):
     choice = [row, column, actual_player[1]]
     
     # Just for test => annotate before commit
-    print(choice)
+    return choice
     
