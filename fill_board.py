@@ -8,9 +8,6 @@ def fill_board(board, choice):
 #:choice: player choice(row, column symbol).
 
     row, column, symbol = choice
-    if board[row][column] == " ":
-        board[row][column] = symbol
-    else:
-        print("Cette case est déjà prise. Veuillez choisir une autre case.")
-    
+    board[row][column] == " "
+    board[row][column] = symbol
     return board
