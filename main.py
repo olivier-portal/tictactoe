@@ -13,6 +13,8 @@ from is_winner import is_winner
 
 from is_board_full import is_board_full
 
+from players_turn import players_turn
+
 """
     The main() function stocks the principal functions in variables in order to call them at the end
     This function also allows you to keep in buffer the variables which will be used as arguments in another function 
@@ -26,14 +28,15 @@ def main():
     introduction = intro()
     player1, player2 = define_players()
     symbol_1, symbol_2 = define_symbol(player1, player2)
+    actual_player = player1
     board = create_grid()
     print_the_board = print_board(board)
-    choice = choose_box(board, player1, player2, symbol_1, symbol_2)
+    choice = choose_box(player1, player2)
     checking_case(board, choice)
     fill_board(board, choice)
-    is_winner(board)
+    is_winner(board, player1, player2)
     is_board_full(board)
     print_board(board)
-    
-    
+    players_turn(actual_player, player1, player2) 
+
 main()

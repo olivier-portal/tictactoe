@@ -8,9 +8,7 @@ from start_game_function import create_grid
 def checking_case(board, choice):
     row = choice[0]
     column = choice[1]
-    print(board)
     if board[row - 1][column - 1] == " ":
-        print("La case est vide.")
         return True
     else:
          print("La case n'est pas vide. Veuillez choisir une autre case.")
