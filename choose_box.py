@@ -1,12 +1,5 @@
-def choose_box(player1, player2):
+def choose_box(actual_player, player1, player2):
     # Define who starts first:
-    round = 1
-    
-    actual_player = player1
-    if round % 2 == 0:
-        actual_player = player2
-    else:
-        actual_player = player1
 
     print(f"\n{actual_player[0]} c'est votre tour de jouer ! ")
     
@@ -30,14 +23,7 @@ def choose_box(player1, player2):
         if column not in [1, 2, 3]:
             print("Entrée invalide. Vous devez choisir entrer le numéro de colonne. 1 est la colonne de gauche, 2 la colonne du milieu et 3 la colonne de droite. Recommencez.") #column out of range
     
-    # if assigned_symbol == symbol_1:
-    #     board[row - 1][column - 1] = symbol_1
-    # else:
-    #     board[row - 1][column - 1] = symbol_2
-        
-    # choice = actual_player[1]
     choice = [row, column, actual_player[1]]
     
-    # Just for test => annotate before commit
     return choice
     
