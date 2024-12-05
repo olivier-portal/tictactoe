@@ -11,7 +11,7 @@ def checking_case(board, choice):
     if board[row - 1][column - 1] == " ":
         return True
     else:
-         print("La case n'est pas vide. Veuillez choisir une autre case.")
+         print("\nLa case n'est pas vide. Veuillez choisir une autre case.")
          return False
      
         

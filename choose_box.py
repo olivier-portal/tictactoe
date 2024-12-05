@@ -12,9 +12,9 @@ def choose_box(actual_player):
             row = int(input(f"\nChoisissez une ligne entre 1 et 3 : ")) #row OK
         
             if row not in [1, 2, 3]:
-                print("Le chiffre doit être 1, 2 ou 3. Vous devez choisir le numéro de ligne: 1 est la ligne du haut, 2 la ligne du milieu et 3 la ligne du bas. Recommencez.") #row out of range
+                print("\nLe chiffre doit être 1, 2 ou 3. Vous devez choisir le numéro de ligne: 1 est la ligne du haut, 2 la ligne du milieu et 3 la ligne du bas. Recommencez.") #row out of range
         except ValueError:
-            print("Ce n'est pas un nombre. Vous devez choisir le numéro de colonne. 1 est la colonne de gauche, 2 la colonne du milieu et 3 la colonne de droite. Recommencez.") #If player enter anything but a number
+            print("\nCe n'est pas un nombre. Vous devez choisir le numéro de colonne. 1 est la colonne de gauche, 2 la colonne du milieu et 3 la colonne de droite. Recommencez.") #If player enter anything but a number
         
             
     # Ask player to choose a column
