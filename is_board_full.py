@@ -11,10 +11,10 @@ def is_board_full(board):
     return dispo                # The function returns a Boolean value
 
 
-### this 
+### the next lines are only for test
 '''board = [
     ["X", "O", "X"],
-    ["X", " ", "O"],
+    ["X", "X", "O"],
     ["O", "X", " "]
 ]
 
