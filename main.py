@@ -45,7 +45,7 @@ def main():
     
     # While the board is not full, continue to play
     while is_board_full(board):
-        choice = choose_box(actual_player, player1, player2)
+        choice = choose_box(actual_player)
         check = checking_case(board, choice)
         if check:
             fill_board(board, choice)
@@ -61,7 +61,7 @@ def main():
                 print_board(board)
                 break 
         else:
-            choice = choose_box(player1,player2)
+            choice = choose_box(actual_player)
 
 
 main()

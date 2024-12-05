@@ -1,4 +1,4 @@
-def choose_box(actual_player, player1, player2):
+def choose_box(actual_player):
     # Define who starts first:
 
     print(f"\n{actual_player[0]} c'est votre tour de jouer ! ")
