@@ -62,6 +62,7 @@ def main():
                 break 
         else:
             choice = choose_box(actual_player)
+            #is_board_full(board) == True
 
 
 main()
