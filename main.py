@@ -58,6 +58,7 @@ def main():
                     print_board(board)
                     actual_player = players_turn(actual_player, player1, player2)
             else:
+                print_board(board)
                 break 
         else:
             choice = choose_box(player1,player2)
