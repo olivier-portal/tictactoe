@@ -6,7 +6,7 @@ def is_board_full(board):
                                 # if NOT found it returns “False”.
                                 # if found, it returns “True”.
         i += 1
-        if dispo:               # Si dispo is "True"
+        if dispo:               # If dispo is "True"
             break               # Loop stops
     return dispo                # The function returns a Boolean value
 

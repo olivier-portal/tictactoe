@@ -34,34 +34,34 @@ from players_turn import players_turn
 """
 def main():
     # Start the game
-    intro()
-    player1, player2 = define_players()
-    symbol_1, symbol_2 = define_symbol(player1, player2)
-    actual_player = player1
-    board = create_grid()
+    intro() # Display Welcome message and remind the rules
+    player1, player2 = define_players() # input players names
+    symbol_1, symbol_2 = define_symbol(player1, player2) # Input symbols for each player (stock in players list)
+    actual_player = player1 # Define who starts first
+    board = create_grid() # Create the grid
     
     # Print the initial board (empty)
     print_the_board = print_board(board)
     
     # While the board is not full, continue to play
-    while is_board_full(board):
-        choice = choose_box(actual_player)
-        check = checking_case(board, choice)
-        if check:
-            fill_board(board, choice)
-            if is_winner(board, player1, player2) == False:
-                if is_board_full(board) == False:
-                    print_board(board)
-                    print("\nEgalité ! Bien joué à tous les deux.")
-                    break
+    while is_board_full(board): # While the game board isn't full it continues
+        choice = choose_box(actual_player) # Permitt players to choose a box
+        check = checking_case(board, choice) #Verify that the choosen box isn't allready chosen
+        if check: # If the chosen box is emty do :
+            fill_board(board, choice) # Fill the chosen box
+            if is_winner(board, player1, player2) == False: # If there is no winner
+                if is_board_full(board) == False: # If the board is full
+                    print_board(board) # Print the full board
+                    print("\nEgalité ! Bien joué à tous les deux.") # Send a message "this is a draw"
+                    break # Stop the game
                 else:
-                    print_board(board)
-                    actual_player = players_turn(actual_player, player1, player2)
+                    print_board(board) # If the board isn't full, print the board
+                    actual_player = players_turn(actual_player, player1, player2) # Switch to the next player
             else:
-                print_board(board)
+                print_board(board) # If there is a winner, print board and send a message "player X wins"
                 break 
         else:
-            is_board_full(board) == True
+            is_board_full(board) == True # If the board isn't full start again the loop for next move
 
 
-main()
+main() #Launch the game
