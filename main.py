@@ -1,27 +1,27 @@
 # Create a tic tac toe game
 
 # import functions
-from start_game import intro
+from functions.start_game import intro
 
-from define_players import define_players
+from functions.define_players import define_players
 
-from define_symbol import define_symbol
+from functions.define_symbol import define_symbol
 
-from create_grid import create_grid
+from functions.create_grid import create_grid
 
-from print_board import print_board
+from functions.print_board import print_board
 
-from choose_box import choose_box
+from functions.choose_box import choose_box
 
-from checking_case import checking_case
+from functions.checking_case import checking_case
 
-from fill_board import fill_board
+from functions.fill_board import fill_board
 
-from is_winner import is_winner
+from functions.is_winner import is_winner
 
-from is_board_full import is_board_full
+from functions.is_board_full import is_board_full
 
-from players_turn import players_turn
+from functions.players_turn import players_turn
 
 """
     The main() function stocks the principal functions in variables in order to call them at the end
